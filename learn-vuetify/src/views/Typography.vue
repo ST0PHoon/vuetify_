@@ -4,7 +4,27 @@
       <v-card-title>
         Typography
       </v-card-title>
-      <v-container class="grey ligten-3">
+      <v-card-text>
+        <!--색상변경-->
+        <v-card class="pa-3 mb-3 text-h2 primary darken-1">
+          Primary Color
+        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 secondary lighten-1">
+          Secondary Color
+        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 error">
+          Error Color
+        </v-card>
+        <!--글자 색상변경-->
+        <v-card class="pa-3 mb-3 text-h2 primary--text">
+          Primary Color
+        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 secondary--text">
+          Secondary Color
+        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 error--text">
+          Error Color
+        </v-card>
         <v-card class="pa-3" outlined>
           <!-- 글자 크기 -->
           <p class="text-h1">Heading 1</p>
@@ -42,7 +62,7 @@
             Disabled text has an opacity of 38% in light theme and 50% in dark.
           </p>
         </v-card>
-      </v-container>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
