@@ -1,7 +1,7 @@
-<template >
-    <div>
-        GridSystem
-    </div>
+<template>
+  <div>
+    GridSystem
+  </div>
 </template>
 <script>
 export default {
