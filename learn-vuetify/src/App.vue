@@ -5,12 +5,9 @@
       color="primary"
       dark
     >
-     <v-app-bar-nav-icon @click="drawer = !drawer" />
-
+    <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-spacer />
-
     </v-app-bar>
-
     <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
@@ -22,9 +19,7 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-
       <v-divider />
-
       <v-list
         dense
         nav
@@ -38,32 +33,32 @@
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
     <v-main>
-      <router-view />
+        <v-container fluid>
+          <router-view />
+        </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-
 export default {
   name: 'App',
-
   data: () => ({
     drawer: false,
     items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
           { title: 'Grid-System', icon: 'mdi-view-dashboard', to: '/grid-system' },
+          { title: 'Breakpoint', icon: 'mdi-view-dashboard', to: '/breakpoints' },
+          { title: 'Typography', icon: 'mdi-view-dashboard', to: '/typography' },
         ],
-        right: null,
+    right: null,
   }),
 };
 </script>

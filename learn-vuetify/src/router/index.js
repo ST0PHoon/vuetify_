@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 //페이지 추가
 import Dashboard from '@/views/Dashboard'
 import GridSystem from '@/views/GridSystem'
+import Breakpoints from '@/views/Breakpoints'
+import Typography from '@/views/Typography'
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,16 @@ const routes = [
         path: '/grid-system',
         name: 'GridSystem',
         component: GridSystem
+    },
+    {
+        path: '/breakpoints',
+        name: 'Breakpoints',
+        component: Breakpoints
+    },
+    {
+        path: '/typography',
+        name: 'Typography',
+        component: Typography
     },
 ]
 
