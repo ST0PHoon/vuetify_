@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      <v-card-title>
-        Typography
-      </v-card-title>
+      <v-card-title> Typography </v-card-title>
       <v-card-text>
         <!--색상변경-->
         <v-card class="pa-3 mb-3 text-h2 primary darken-1">
@@ -12,19 +10,13 @@
         <v-card class="pa-3 mb-3 text-h2 secondary lighten-1">
           Secondary Color
         </v-card>
-        <v-card class="pa-3 mb-3 text-h2 error">
-          Error Color
-        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 error"> Error Color </v-card>
         <!--글자 색상변경-->
-        <v-card class="pa-3 mb-3 text-h2 primary--text">
-          Primary Color
-        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 primary--text"> Primary Color </v-card>
         <v-card class="pa-3 mb-3 text-h2 secondary--text">
           Secondary Color
         </v-card>
-        <v-card class="pa-3 mb-3 text-h2 error--text">
-          Error Color
-        </v-card>
+        <v-card class="pa-3 mb-3 text-h2 error--text"> Error Color </v-card>
         <v-card class="pa-3" outlined>
           <!-- 글자 크기 -->
           <p class="text-h1">Heading 1</p>
@@ -37,26 +29,27 @@
           <!-- 글자 배열 left, center, right / breakpoint 사용 가능 -->
           <div class="text-h5 text-center mb-3">Alignment</div>
           <p class="text-justify">
-            Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Fusce convallis metus id felis luctus adipiscing. Aenean massa. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nulla consequat massa quis enim. Praesent venenatis metus at tortor pulvinar varius. Donec venenatis vulputate lorem. Phasellus accumsan cursus velit. Pellentesque ut neque.
+            Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut,
+            faucibus non, euismod id, nulla. Fusce convallis metus id felis
+            luctus adipiscing. Aenean massa. Vestibulum purus quam, scelerisque
+            ut, mollis sed, nonummy id, metus. Nulla consequat massa quis enim.
+            Praesent venenatis metus at tortor pulvinar varius. Donec venenatis
+            vulputate lorem. Phasellus accumsan cursus velit. Pellentesque ut
+            neque.
           </p>
           <!-- 글자 꾸미기 -->
           <div class="text-h5 text-center mb-3">Decoratino</div>
-          <p class="text-decoration-line-through">
-            Line-through text
-          </p>
-          <p class="text-decoration-overline">
-            Overline text
-          </p>
-          <p class="text-decoration-underline">
-            Underline text
-          </p>
+          <p class="text-decoration-line-through">Line-through text</p>
+          <p class="text-decoration-overline">Overline text</p>
+          <p class="text-decoration-underline">Underline text</p>
           <!-- 투명도 -->
           <div class="text-h5 text-center mb-3">Opacity</div>
           <p class="text--primary">
             High-emphasis has an opacity of 87% in light theme and 100% in dark.
           </p>
           <p class="text--secondary">
-            Medium-emphasis text and hint text have opacities of 60% in light theme and 70% in dark.
+            Medium-emphasis text and hint text have opacities of 60% in light
+            theme and 70% in dark.
           </p>
           <p class="text--disabled">
             Disabled text has an opacity of 38% in light theme and 50% in dark.
@@ -68,11 +61,7 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
-<style>
-  
-</style>
+<style></style>

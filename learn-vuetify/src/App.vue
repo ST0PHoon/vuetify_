@@ -3,6 +3,10 @@
     <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-spacer />
+      <v-btn flat color="primary" v-if="isLogin">Welcome</v-btn>
+      <v-btn flat color="primary" v-else router :to="{ name: 'login' }"
+        >Log in</v-btn
+      >
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
@@ -32,6 +36,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "App",
   data: () => ({
@@ -45,5 +50,8 @@ export default {
     ],
     right: null,
   }),
+  computed: {
+    ...mapState(["isLogin"]),
+  },
 };
 </script>
