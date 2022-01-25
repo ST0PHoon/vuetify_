@@ -15,22 +15,28 @@
           <v-list-item-subtitle> subtext </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
+
       <v-divider />
-      <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link :to="item.to">
+
+      <v-list v-for="item in items" :key="item.title" dense nav>
+        <!-- 로그인 안됐을 때(false), Nologin(로그인페이지) / 로그인 됐을 때(true), YesLogin(마이페이지) -->
+        <v-list-item
+          v-if="
+            item.show == 'all' ||
+            (isLogin == false && item.show == 'NoLogin') ||
+            (isLogin == true && item.show == 'YesLogin')
+          "
+          link
+          :to="item.to"
+        >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-content
-            v-if="item.title == 'Login' || item.title == 'Mypage'"
-          >
-            <v-list-item-title v-if="isLogin">Mypage</v-list-item-title>
-            <v-list-item-title v-else>Login</v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-content v-else>
+          <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item v-else />
       </v-list>
     </v-navigation-drawer>
     <v-main>
@@ -48,12 +54,27 @@ export default {
   data: () => ({
     drawer: false,
     items: [
-      { title: "Dashboard", icon: "mdi-view-dashboard", to: "/" },
-      { title: "Grid-System", icon: "mdi-border-all", to: "/grid-system" },
-      { title: "Breakpoint", icon: "mdi-cards-spade", to: "/breakpoints" },
-      { title: "Typography", icon: "mdi-alpha-a-box", to: "/typography" },
-      { title: "Login", icon: "mdi-account", to: "/login" }, // v-if="isLogin===true"
-      { title: "Mypage", icon: "mdi-account", to: "/mypage" }, //v-if="isLogin===false"
+      { title: "Dashboard", icon: "mdi-view-dashboard", to: "/", show: "all" },
+      {
+        title: "Grid-System",
+        icon: "mdi-border-all",
+        to: "/grid-system",
+        show: "all",
+      },
+      {
+        title: "Breakpoint",
+        icon: "mdi-cards-spade",
+        to: "/breakpoints",
+        show: "all",
+      },
+      {
+        title: "Typography",
+        icon: "mdi-alpha-a-box",
+        to: "/typography",
+        show: "all",
+      },
+      { title: "Login", icon: "mdi-account", to: "/login", show: "NoLogin" },
+      { title: "Mypage", icon: "mdi-account", to: "/mypage", show: "YesLogin" },
     ],
     right: null,
   }),
