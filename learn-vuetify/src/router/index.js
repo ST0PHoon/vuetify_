@@ -6,6 +6,7 @@ import GridSystem from "@/views/GridSystem";
 import Breakpoints from "@/views/Breakpoints";
 import Typography from "@/views/Typography";
 import Login from "@/views/Login";
+import Mypage from "@/views/Mypage";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/mypage",
+    name: "Mypage",
+    component: Mypage,
   },
 ];
 
