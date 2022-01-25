@@ -21,7 +21,13 @@
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-content>
+          <v-list-item-content
+            v-if="item.title == 'Login' || item.title == 'Mypage'"
+          >
+            <v-list-item-title v-if="isLogin">Mypage</v-list-item-title>
+            <v-list-item-title v-else>Login</v-list-item-title>
+          </v-list-item-content>
+          <v-list-item-content v-else>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -46,7 +52,8 @@ export default {
       { title: "Grid-System", icon: "mdi-border-all", to: "/grid-system" },
       { title: "Breakpoint", icon: "mdi-cards-spade", to: "/breakpoints" },
       { title: "Typography", icon: "mdi-alpha-a-box", to: "/typography" },
-      { title: "Login", icon: "mdi-account", to: "/login" },
+      { title: "Login", icon: "mdi-account", to: "/login" }, // v-if="isLogin===true"
+      { title: "Mypage", icon: "mdi-account", to: "/mypage" }, //v-if="isLogin===false"
     ],
     right: null,
   }),
