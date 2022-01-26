@@ -36,6 +36,12 @@ export default new Vuex.Store({
       state.isLogin = false;
       state.isLoginError = true;
     },
+    //로그아웃
+    logout(state) {
+      state.isLogin = false;
+      state.isLoginError = false;
+      state.userInfo = null;
+    },
   },
   actions: {
     //로그인 시도
@@ -50,6 +56,10 @@ export default new Vuex.Store({
         commit("loginSuccess", selectedUser);
         router.push({ name: "Mypage" }); //vue 파일 안에서는 this.$router.push({})
       }
+    },
+    logout({ commit }) {
+      commit("logout");
+      router.push({ name: "home" }); // 로그아웃하면 홈으로 보내줌
     },
   },
 });

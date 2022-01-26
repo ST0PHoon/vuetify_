@@ -3,8 +3,25 @@
     <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-spacer />
-      <v-btn flat color="primary" v-if="isLogin">Welcome</v-btn>
-      <v-btn flat color="primary" v-else router :to="{ name: 'login' }"
+      <v-menu left bottom v-if="isLogin">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item router :to="{ name: 'Mypage' }">
+            <v-list-item-title>마이페이지</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <!--dispatch를 통해 store에있는 actions의 함수를 불러와 사용-->
+            <v-list-item-title @click="$store.dispatch('logout')"
+              >로그아웃</v-list-item-title
+            >
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-btn flat color="primary" v-else router :to="{ name: 'Login' }"
         >Log in</v-btn
       >
     </v-app-bar>
@@ -81,5 +98,9 @@ export default {
   computed: {
     ...mapState(["isLogin"]),
   },
+  // import에 mapActions 를 기입 > @click="logout" 을 작성 => store actions에 있는 함수 사용
+  // methods: {
+  //   ...mapActions(["logout"]),
+  // },
 };
 </script>
